@@ -37,14 +37,16 @@ dependencies {
 
 ```
 public class app extends Application {
+  
+    @Override
+    protected boolean EnableErrorHandler() {
+        return true;
+    }
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-            new UCEHandler.Builder(this)
-                    .setTrackActivitiesEnabled(false)
-                    .setLink("WebService Link here")
-                    .build();
+    protected String ErrorHandlerLink() {
+        return "";
+    }
 }
 ```
 **Step 4.**  Add  android:name=".app" under application in manifist:
